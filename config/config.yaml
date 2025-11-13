@@ -1,0 +1,42 @@
+# Configuration file for Few-Shot Time Series Learning Project
+
+# Data generation parameters
+data:
+  sequence_length: 50
+  num_support_samples: 5
+  num_query_samples: 10
+  noise_level: 0.1
+  num_classes: 2
+
+# Model parameters
+model:
+  embedding_dim: 32
+  conv_channels: [16, 32]
+  kernel_size: 3
+  dropout: 0.1
+
+# Training parameters
+training:
+  learning_rate: 0.001
+  batch_size: 32
+  num_epochs: 100
+  early_stopping_patience: 10
+
+# Evaluation parameters
+evaluation:
+  test_size: 0.2
+  random_state: 42
+  metrics: ["accuracy", "precision", "recall", "f1"]
+
+# Visualization parameters
+visualization:
+  figure_size: [12, 8]
+  dpi: 100
+  style: "seaborn-v0_8"
+  color_palette: "husl"
+
+# Logging parameters
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/timeseries_analysis.log"
